@@ -4,8 +4,8 @@ import requests
 from lxml import etree
 import re
 
-# 文件上传的地址
-UPLOAD_FOLDER = 'static/vedios/details.txt'
+
+UPLOAD_FOLDER = 'static/vedios
 app = Flask(__name__)
 app.secret_key = '123456'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
