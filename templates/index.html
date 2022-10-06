@@ -1,0 +1,53 @@
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="referrer" content="no-referrer">
+<title>免费视频在线观看</title>
+<link rel="icon" sizes="any" mask="" href="https://asnit.top/sitetoplogo.png">
+</head>
+
+<center>
+<div class="warning">
+        {% for message in get_flashed_messages() %}
+			<strong>搜索的片名：</strong> {{ message }}
+        {% endfor %}
+    </div>
+    <p style="color: darkgreen;font-size: 8px">注：并非真实剧名<模糊搜索></p>
+
+</center><br>
+<br/><br/>
+<center><img src="https://asnit.top/sitetoplogo.png" width="50px" height="50px" alt="logo" align="center"/></center><br><br>
+<!-- <hr/> -->
+
+<body bgcolor="#E6E6FA"><center>
+		<form action="{{ url_for('index') }}" method="POST">
+		<table>
+			<tr align="center"><td><input style="width:300px;height:30px" type="text" placeholder="请输入需要搜索的片名" name="scon"></td><td><button style="width:80px;height:30px">搜索</button></td></tr>
+		</table>
+		</form>
+    <p style="color: red;font-size: 10px">注：点击搜索清空列表！</p>
+	<!-- <hr/> -->
+	<br><br><br>
+	<table border="1">
+		<thead>
+		<tr>
+			<th>选集</th>
+			<th>剧名</th>
+		</tr>
+		</thead>
+		<tbody>
+		{% for record in records %}
+			<tr>
+				<td><a href=\player/{{record['date']}}>{{ record['filename'] }}</a></td>
+				<td>{{ get_flashed_messages()[0] }}</td>
+			</tr>
+
+		{% endfor %}
+		</tbody>
+	</table>
+
+
+</body></center>
+</html>
